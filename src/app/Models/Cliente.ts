@@ -1,14 +1,14 @@
 //Representacion del json
 export interface Cliente{
     id : number;
-    numeroIdentificacion : number;
-    primerNombre : string;
-    segundoNombre : string;
-    primerApellido : string;
-    segundoApellido : string;
+    numero_Identificacion : number;
+    primer_Nombre : string;
+    segundo_Nombre : string;
+    primer_Apellido : string;
+    segundo_Apellido : string;
     telefono : string;
     email : string;
-    fechaNacimiento : Date;
-    valor : number;
+    fecha_nacimiento : Date;
+    valor_Estimado_Seguro : number;
     observaciones : string;
 }

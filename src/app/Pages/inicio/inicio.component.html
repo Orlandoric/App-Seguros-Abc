@@ -1,4 +1,4 @@
-<mat-card style="width: 100%; margin: 50px auto">
+<mat-card style="width: 95%; margin: 50px auto">
 
     <mat-card-header>
         <mat-card-title><p>LISTA CLIENTES</p></mat-card-title>
@@ -6,44 +6,44 @@
     <mat-card-content>
         <button mat-flat-button color="primary" (click)="nuevo()">Nuevo Cliente</button>
 
-        <table mat-table [dataSource]="listaClientes" class="mat-elevation-z2" style="margin-top:20px">
+        <table mat-table [dataSource]="listaClienteDs" class="mat-elevation-z2" style="margin-top:20px">
 
             <!--- Note that these columns can be defined in any order.
                   The actual rendered columns are set as a property on the row definition" -->
           
             <!-- Position Column -->
-            <ng-container matColumnDef="numeroIdentificacion">
-                <th mat-header-cell *matHeaderCellDef> Numero Identificacion</th>
-                <td mat-cell *matCellDef="let element"> {{element.numeroIdentificacion}} </td>
+            <ng-container matColumnDef="numero_Identificacion">
+                <th mat-header-cell *matHeaderCellDef> Número Identificación</th>
+                <td mat-cell *matCellDef="let element"> {{element.numero_Identificacion}} </td>
               </ng-container>
 
             <!-- Position Column -->
-            <ng-container matColumnDef="primerNombre">
+            <ng-container matColumnDef="primer_Nombre">
               <th mat-header-cell *matHeaderCellDef> Primer Nombre</th>
-              <td mat-cell *matCellDef="let element"> {{element.primerNombre}} </td>
+              <td mat-cell *matCellDef="let element"> {{element.primer_Nombre}} </td>
             </ng-container>
 
             <!-- Position Column -->
-            <ng-container matColumnDef="segundoNombre">
+            <ng-container matColumnDef="segundo_Nombre">
                 <th mat-header-cell *matHeaderCellDef> Segundo Nombre</th>
-                <td mat-cell *matCellDef="let element"> {{element.segundoNombre}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.segundo_Nombre}} </td>
               </ng-container>
 
               <!-- Position Column -->
-            <ng-container matColumnDef="primerApellido">
+            <ng-container matColumnDef="primer_Apellido">
                 <th mat-header-cell *matHeaderCellDef> Primer Apellido</th>
-                <td mat-cell *matCellDef="let element"> {{element.primerApellido}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.primer_Apellido}} </td>
               </ng-container>
 
               <!-- Position Column -->
-            <ng-container matColumnDef="segundoApellido">
+            <ng-container matColumnDef="segundo_Apellido">
                 <th mat-header-cell *matHeaderCellDef> Segundo Apellido</th>
-                <td mat-cell *matCellDef="let element"> {{element.segundoApellido}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.segundo_Apellido}} </td>
               </ng-container>
 
               <!-- Position Column -->
             <ng-container matColumnDef="telefono">
-                <th mat-header-cell *matHeaderCellDef> Telefono</th>
+                <th mat-header-cell *matHeaderCellDef> Teléfono</th>
                 <td mat-cell *matCellDef="let element"> {{element.telefono}} </td>
               </ng-container>
           
@@ -54,15 +54,15 @@
             </ng-container>
 
             <!-- Name Column -->
-            <ng-container matColumnDef="fechaNacimiento">
+            <ng-container matColumnDef="fecha_nacimiento">
                 <th mat-header-cell *matHeaderCellDef> Fecha Nacimiento </th>
-                <td mat-cell *matCellDef="let element"> {{element.fechaNacimiento}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.fecha_nacimiento}} </td>
               </ng-container>
           
             <!-- Weight Column -->
-            <ng-container matColumnDef="valor">
+            <ng-container matColumnDef="valor_Estimado_Seguro">
               <th mat-header-cell *matHeaderCellDef> Valor Estimado Seguro </th>
-              <td mat-cell *matCellDef="let element"> {{element.valor}} </td>
+              <td mat-cell *matCellDef="let element"> {{element.valor_Estimado_Seguro}} </td>
             </ng-container>
           
             <!-- Symbol Column -->
@@ -74,10 +74,10 @@
             <ng-container matColumnDef="accion">
                 <th mat-header-cell *matHeaderCellDef> </th>
                 <td mat-cell *matCellDef="let element">
-                    <button mat-icon-button color="primary" (click)="editar(element)">
+                    <button mat-icon-button style="color: #005cbb;" (click)="editar(element)">
                         <mat-icon>edit</mat-icon>
                       </button>
-                      <button mat-icon-button color="warn" (click)="eliminar(element)">
+                      <button mat-icon-button style="color: red;" (click)="eliminar(element)">
                         <mat-icon>delete</mat-icon>
                       </button>
                 </td>
@@ -86,5 +86,12 @@
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
           </table>
+
+          <mat-paginator [length]="100"
+              [pageSize]="5"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page">
+            </mat-paginator>
+
     </mat-card-content>
   </mat-card>

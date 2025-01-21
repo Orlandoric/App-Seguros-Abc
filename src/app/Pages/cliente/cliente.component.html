@@ -1,1 +1,71 @@
-<p>cliente works!</p>
+<div class="mat-elevation-z2" style="width: 30%; padding: 30px; margin: 50px auto; display: flex;justify-content: center; border: 1px solid #00000033; box-shadow: 5px 5px #00000012;">
+    <form [formGroup]="formCliente">
+        <div class="flex">
+            <mat-form-field>
+                <mat-label>Numero Identificacion</mat-label>
+                <input required matInput  formControlName="numero_Identificacion">
+              </mat-form-field>
+        </div>
+        <div class="flex">
+            <mat-form-field>
+                <mat-label>Primer Nombre</mat-label>
+                <input required matInput  formControlName="primer_Nombre">
+              </mat-form-field>
+        </div>
+        <div class="flex">
+            <mat-form-field>
+                <mat-label>Segundo Nombre</mat-label>
+                <input matInput  formControlName="segundo_Nombre">
+              </mat-form-field>
+        </div>
+        <div class="flex">
+            <mat-form-field>
+                <mat-label>Primer Apellido</mat-label>
+                <input required matInput  formControlName="primer_Apellido">
+              </mat-form-field>
+        </div>
+        <div class="flex">
+            <mat-form-field>
+                <mat-label>Segundo Apellido</mat-label>
+                <input required matInput  formControlName="segundo_Apellido">
+              </mat-form-field>
+        </div>
+        <div class="flex">
+            <mat-form-field>
+                <mat-label>Telefono</mat-label>
+                <input required matInput  formControlName="telefono">
+              </mat-form-field>
+        </div>
+        <div class="flex">
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input required matInput  formControlName="email">
+              </mat-form-field>
+        </div>
+        <div class="flex">
+            <mat-form-field>
+                <mat-label>Fecha Nacimento</mat-label>
+                <input required matInput type="date"  formControlName="fecha_nacimiento">
+              </mat-form-field>
+        </div>
+        <div class="flex">
+            <mat-form-field>
+                <mat-label>Valor Estimado Seguro</mat-label>
+                <input required matInput type="number"  formControlName="valor_Estimado_Seguro">
+              </mat-form-field>
+        </div>
+        <div class="flex">
+            <mat-form-field>
+                <mat-label>Observaciones</mat-label>
+                <input matInput  formControlName="observaciones">
+              </mat-form-field>
+        </div>
+
+        <div class="flex">
+            <button mat-flat-button color="primary" (click)="guardar()">Guardar</button>
+            <button mat-flat-button color="warn" (click)="volver()" style="margin-left: 8px; background-color: red;">Volver</button>
+        </div>
+
+    </form>
+
+</div>
